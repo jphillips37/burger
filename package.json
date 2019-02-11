@@ -17,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/jphillips37/burger/issues"
   },
-  "homepage": "https://github.com/jphillips37/burger#readme"
+  "homepage": "https://github.com/jphillips37/burger#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "mysql": "^2.16.0",
+    "dotenv": "^6.2.0"
+  }
 }
