@@ -7,15 +7,15 @@ var orm = {
             cb(result); 
         });
     },
-    insertOne: function(burgerId, cb){
-        var queryString = "SELECT * FROM burgers WHERE id = ?";
-        connection.query(queryString, burgerId, function(err, result){
+    insertOne: function(burgerName, cb){
+        var queryString = "INSERT INTO burgers (burger_name) VALUES (?)";
+        connection.query(queryString, burgerName, function(err, result){
             if(err) throw err;
             cb(result)
         })
     },
     updateOne: function(burgerId, cb){
-        var queryString = "UPDATE burgers SET devoured = false WHERE id = ?";
+        var queryString = "UPDATE burgers SET devoured = true WHERE id = ?";
         connection.query(queryString, burgerId, function(err, result){
             if(err) throw err;
             cb(result);

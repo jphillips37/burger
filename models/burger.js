@@ -11,8 +11,8 @@ var burger = {
             cb(results);
         });
     },
-    selectOne: function(id, cb){
-        orm.selectOne(id, function(results){
+    insertOne: function(burgerName, cb){
+        orm.insertOne(burgerName, function(results){
             cb(results);
         });
     }
