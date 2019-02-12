@@ -16,15 +16,18 @@
 <script type="text/javascript">
     $(".devour-it").on("click", function(event){
         var id = $(this).attr("id");
-
+        console.log(id);
         $.ajax("/api/burgers/"+id, {
-            type: "PUT"
-        }).then(function(){
+            type: "PUT",
+            data: {id:id}
+        }).then(function(value){
+            console.log(value);
             location.reload();
         });
     });
 
-    $("#add").on("click", function(event){
+    $("#add").on("click", function(){
+        //event.preventDefault();
         var newBurger = $("#new-burger").val();
 
         var burgerObject = {
@@ -34,8 +37,8 @@
         $.ajax("/api/burgers", {
             type: "POST",
             data: burgerObject
-        }).then(function(){
-
+        }).then(function(value){
+            console.log(value);
         })
     })
 </script>

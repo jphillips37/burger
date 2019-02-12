@@ -20,17 +20,21 @@ router.post("/api/burgers", function(req, res){
     });
 });
 
-router.put("/api/burgers/:id"), function(req, res){
+router.put("/api/burgers/:id", function(req, res){
     var burgerID = req.params.id;
+    console.log(burgerID);
     burger.update(burgerID, function(results){
-        // if (results.changedRows == 0) {
-        //     return res.status(404).end();
-        // } 
-        // else {
-        //     res.status(200).end();
-        // }
-        console.log("done");
+        res.json(results);
+
+        if (results.changedRows == 0) {
+            return res.status(404).end();
+        } 
+        else {
+            res.status(200).end();
+        };
+
+        // console.log("done");
     });
-};
+});
 
 module.exports = router;
