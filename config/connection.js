@@ -1,7 +1,7 @@
 var mysql = require("mysql");
 
 var connection = mysql.createConnection({
-    host: "172.19.34.118",
+    host: "localhost",
     port: 3306,
     user: "root",
     password: "CWRU2019jp",
