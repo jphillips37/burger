@@ -1,7 +1,4 @@
 var mysql = require("mysql");
-require("dotenv").config();
-
-var burgerKey = require("../key.js");
 
 var connection = mysql.createConnection({
     host: "localhost",
